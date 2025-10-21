@@ -4,24 +4,15 @@ Inspired by [Cube](http://cubeengine.com/) and [Minecraft](https://minecraft.net
 
 **Note**: Currently all work on this project has stopped and it will not be updated anymore.
 
-## Features
+## Features & Tech Stack
 
-- **Minecraft-like Editing**: 256x256x256 cube map editing capabilities
-- **Octree Scene Management**: Efficient spatial partitioning for large worlds
-- **Simple Scripting Language**: Custom scripting system for game logic
-- **Collision Detection**: Basic collision detection system
-- **OpenGL Rendering**: Fixed pipeline OpenGL renderer with static directional lighting
-- **Multiplayer Support**: Network-based multiplayer gameplay
-- **Real-time Editing**: In-game world editing capabilities
-- **Skybox System**: Dynamic sky rendering with multiple skybox support
-- **Texture Management**: Efficient texture loading and management
-- **Physics Integration**: Basic physics simulation for gameplay
-
-## Tech Stack
-
-- **Language**: Pascal/Delphi (Free Pascal Compiler)
-- **Graphics**: OpenGL with SDL2 for window management
-- **Build System**: Lazarus IDE / Free Pascal
+- **Language**: Pascal/Delphi with Free Pascal Compiler
+- **Graphics**: OpenGL fixed pipeline renderer with SDL2 window management  
+- **World System**: 256x256x256 cube map with octree spatial partitioning
+- **Real-time Editing**: Minecraft-like in-game world modification
+- **Physics**: Basic collision detection and movement simulation
+- **Scripting**: Custom scripting language for game logic
+- **Rendering**: Texture management, skybox system, frustum culling, static directional lighting
 - **Platforms**: Linux, Windows
 - **Dependencies**: SDL2, OpenGL
 
@@ -114,24 +105,16 @@ bin/QDFPS.exe
 - **ESC**: Exit game
 
 ### Gameplay
-- Navigate through the 3D world
-- Switch between play and edit modes
-- Build and modify the world in real-time
-- Multiplayer support for collaborative building
+- Navigate through the 3D world using WASD + mouse controls
+- Switch between play and edit modes with Tab
+- Build and modify the world in real-time (single-player only)
+- In-game console for debugging and commands
 
-## Development
+## Architecture
 
-### Architecture
-The game follows a modular architecture with separate systems for:
-- **Rendering**: OpenGL-based rendering with frustum culling
-- **Physics**: Basic collision detection and movement
-- **Scripting**: Custom scripting language for game logic
-- **Networking**: Multiplayer synchronization
-- **Editing**: Real-time world modification
-
-### Key Components
-- **Map System**: Handles world data and octree spatial partitioning
-- **Renderer**: OpenGL rendering with texture management
+The game uses a modular design with these core systems:
+- **Map System**: World data management with octree spatial partitioning
+- **Renderer**: OpenGL rendering, texture management, and frustum culling  
 - **Physics**: Collision detection and player movement
 - **Scripting**: Custom script interpreter for game logic
-- **Console**: In-game console for debugging and commands
+- **Console**: Debug interface and command system
